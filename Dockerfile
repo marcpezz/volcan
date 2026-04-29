@@ -26,6 +26,7 @@ RUN julia --version
 
 COPY Project.toml Manifest.toml ./
 #RUN julia --project=. -e 'import Pkg; Pkg.instantiate()'
+RUN julia --project=. -e 'using Pkg; Pkg.add(["JSON", "HDF5"])'
 RUN julia --project=. -e 'import Pkg; Pkg.instantiate(); Pkg.precompile()'
 
 ## --------------------------- ##
