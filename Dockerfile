@@ -24,11 +24,6 @@ ENV PATH="/opt/julia-1.12/bin:$PATH"
 # Verify Julia installation
 RUN julia --version
 
-COPY Project.toml Manifest.toml ./
-#RUN julia --project=. -e 'import Pkg; Pkg.instantiate()'
-RUN julia --project=. -e 'using Pkg; Pkg.add(["JSON", "HDF5"])'
-RUN julia --project=. -e 'import Pkg; Pkg.instantiate(); Pkg.precompile()'
-
 ## --------------------------- ##
 
 RUN echo "/opt/conda/bin/conda init > /dev/null " >> /etc/profile.d/conda.sh && \
