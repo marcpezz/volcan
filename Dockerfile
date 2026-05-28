@@ -1,4 +1,4 @@
-FROM quay.io/uninuvola/base:main
+FROM ghcr.io/marcpezz/image-builder2:main
 
 # DO NOT EDIT USER VALUE
 USER root
